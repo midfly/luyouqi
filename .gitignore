@@ -2,11 +2,4 @@
 /runtime/*
 
 
-.idea
-*.log
-*.css.map
-!.gitkeep
-
-.svn
-.vscode
-node_modules
+ 
