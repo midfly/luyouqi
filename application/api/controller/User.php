@@ -37,7 +37,7 @@ class User extends Api
         $id = input('id');
         $uhq = Youhuiquan::find($id);
         $user = $this->auth->getUser();
-         //$this->sendMsg($user['mobile'],$uhq['sms_cont']);
+         $this->sendMsg($user['mobile'],$uhq['sms_cont']);
         $this->success('',$uhq);
     }
 
@@ -189,7 +189,9 @@ class User extends Api
         if (!Validate::regex($mobile, "^9\d{8}$")) {
             $this->error(__('Mobile is incorrect'));
         }
-
+        if (!Sms::check($mobile, $captcha, 'mobilelogin')) {
+            $this->error(__('Captcha is incorrect'));
+        }
         $user = \app\common\model\User::getByMobile($mobile);
         if ($user) {
             if ($user->status != 'normal') {
