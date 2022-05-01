@@ -5,6 +5,7 @@ namespace app\api\controller;
 use app\admin\model\Device;
 use app\admin\model\Shop;
 use app\admin\model\Wifiusedlog;
+use app\admin\model\Youhuiquan;
 use app\common\controller\Api;
 use app\common\library\Ems;
 use app\common\library\Sms;
@@ -33,9 +34,11 @@ class User extends Api
 
     public function getmyyouhui(){
         //$this->sendMsg();
+        $id = input('id');
+        $uhq = Youhuiquan::find($id);
         $user = $this->auth->getUser();
-        //$this->sendMsg($user['mobile'],'Olá caro utente! O seu código de confirmação é  ')
-        $this->success('');
+         //$this->sendMsg($user['mobile'],$uhq['sms_cont']);
+        $this->success('',$uhq);
     }
 
     private function sendMsg($mobile,$param,$template){
