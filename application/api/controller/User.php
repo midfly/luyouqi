@@ -41,7 +41,7 @@ class User extends Api
         $this->success('',$uhq);
     }
 
-    private function sendMsg($mobile,$param,$template){
+    private function sendMsg($mobile,$param){
         $api_key = "b3f9f3-fd16a8eb643179";
         $mobile_arr = str_split($mobile);
         $mobile_str = '244-';
