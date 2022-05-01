@@ -33,7 +33,8 @@ class User extends Api
 
     public function getmyyouhui(){
         //$this->sendMsg();
-        $this->success('');
+
+        $this->success('',$this->auth->getUser());
     }
 
     private function sendMsg($mobile,$param,$template){
