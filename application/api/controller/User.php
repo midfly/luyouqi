@@ -33,8 +33,9 @@ class User extends Api
 
     public function getmyyouhui(){
         //$this->sendMsg();
-
-        $this->success('',$this->auth->getUser());
+        $user = $this->auth->getUser();
+        //$this->sendMsg($user['mobile'],'Olá caro utente! O seu código de confirmação é  ')
+        $this->success('');
     }
 
     private function sendMsg($mobile,$param,$template){
@@ -60,7 +61,7 @@ class User extends Api
         $method = 'send';
         $data['sms'] =[
             'to'=>$mobile_str,
-            'text'=>"Olá caro utente! O seu código de confirmação é  $param",
+            'text'=>"$param",
             "type"=>"B",
             "network"=>'UNITELAO'
         ];
