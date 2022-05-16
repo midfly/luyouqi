@@ -226,7 +226,7 @@ class User extends Api
                 $client = new  Client();
                 $token_str = "user_ip=$user_ip&timestamp=$timestamp&mac=$mac&upload=0&download=0&&key={$info['appkey']}";
                 $token=md5($token_str);
-                $url ="https://portal.ikuai8-wifi.com/Action/webauth-up?type=7&user_ip=$user_ip&timestamp=$timestamp&upload=0&download=0&token=$token&release_type=2";
+                $url ="https://portal.ikuai8-wifi.com/Action/webauth-up?type=7&user_ip=$user_ip&timestamp=$timestamp&upload=0&download=0&token=$token&release_type=1";
                 $data['url'] = $url;
                 $data['tokenstr'] = $token_str;
         }
