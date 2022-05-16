@@ -177,7 +177,6 @@ class User extends Api
         $name = $this->request->post('sex');
         $captcha = $this->request->post('code');
         $gwid = $this->request->post('gwid');
-        var_dump($gwid);die;
         $custom_name = $this->request->post('custom_name');
         $mac = $this->request->post('mac');
         $type = $this->request->post('type');
