@@ -208,7 +208,7 @@ class User extends Api
             $data = ['userinfo' => $user];
             $user_id = $user['id'];
             $data['url'] = '';
-            if($type == 'wifilogin') {
+            if($gwid) {
                 $info = Device::where('gwid',$gwid)->find();
                 if (!empty($info)) {
                     $shopid = $info['shop_id'];
