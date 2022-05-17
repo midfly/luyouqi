@@ -56,6 +56,17 @@ class Common extends Api
         return $this->success('',$list);
 
     }
+    public function getyouhuibygwid(){
+        $gwid = input('gwid');
+        $info = Device::where('gwid',$gwid)->find();
+        if (empty($info)) {
+            $adgroup = Adgroup::find(1);
+        }else{
+            $adgroup = Adgroup::find($info['adgroup_id']);
+        }
+        return $this->success('',$adgroup['color']);
+
+    }
     public function miidelimg(){
         $gwid = input('gwid');
         $info = Device::where('gwid',$gwid)->find();

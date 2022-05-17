@@ -45,12 +45,24 @@
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <label class="control-label col-xs-12 col-sm-2">{:__('颜色')}:</label>
         <div class="col-xs-12 col-sm-8">
             
             <div class="radio">
+            {foreach name="colorList" item="vo"}
+            <label for="row[color]-{$key}"><input id="row[color]-{$key}" name="row[color]" type="radio" value="{$key}" {in name="key" value="1"}checked{/in} /> {$vo}</label>
+            {/foreach}
+            </div>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+
+            <div class="radio">
             {foreach name="statusList" item="vo"}
-            <label for="row[status]-{$key}"><input id="row[status]-{$key}" name="row[status]" type="radio" value="{$key}" {in name="key" value="normal"}checked{/in} /> {$vo}</label> 
+            <label for="row[status]-{$key}"><input id="row[status]-{$key}" name="row[status]" type="radio" value="{$key}" {in name="key" value="normal"}checked{/in} /> {$vo}</label>
             {/foreach}
             </div>
 

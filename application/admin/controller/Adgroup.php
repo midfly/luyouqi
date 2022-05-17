@@ -23,6 +23,7 @@ class Adgroup extends Backend
         parent::_initialize();
         $this->model = new \app\admin\model\Adgroup;
         $this->view->assign("statusList", $this->model->getStatusList());
+        $this->view->assign("colorList", ['1'=>'橙色','2'=>'蓝色']);
     }
 
 
